@@ -55,6 +55,7 @@
       document.querySelector('.aaaa').remove()
       document.querySelector('#v1').style.display = 'block'
       document.querySelector('#v1').play()
+      document.querySelector('#v1').webkitExitFullScreen();
     };
 
     document.getElementById('v1').addEventListener('ended', function () {
