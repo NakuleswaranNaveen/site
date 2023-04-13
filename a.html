@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="aaaa" onclick="etape1()">Click here to continue</div>
+
+    <video style="display: none;" class="video" src="https://drive.google.com/uc?export=download&id=1Mo-gf1b6O5QwVhG9BOHW9UysonRRJfV6" id="v1"></video>
+
+    <div style="display: none;" id="btn" onclick="etapebtn()">Clique ici pour continue !!!!!!!!!!!!!!!!!!!</div>
+    
+    <video style="display: none;" src="https://drive.google.com/uc?export=download&id=1ALaGGNaxh4FQ0Ln8Vx69SgBg2lVwVD1r" id="v3"></video>
+    <div style="display: none;" class="timer2">Wait please:<span style="visibility: hidden;">//</span><span id="timer">3</span></div>
+
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        .aaaa {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            text-align: center;
+            font-size: 30pt;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+        }
+        #btn,.timer2 {
+            position: absolute;
+            top: 0%;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        @media only screen and (orientation:portrait) {
+            * {box-sizing: border-box;}
+            body {
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                background-color: black;
+            }
+            .aaaa {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: white;
+                text-align: center;
+                font-size: 30pt;
+                transform-origin: right;
+                writing-mode: vertical-rl;
+            }
+            video {
+                width: 100%;
+                height: 100%;
+                transform: rotate(90deg);
+                transform-origin: bottom left;
+                margin-top: -100vw;
+            }
+            #btn,.timer2 {
+                position: absolute;
+                right: 0%;
+                writing-mode: vertical-rl;
+                padding: 10px;
+                border-radius: 10px;
+                background-color: white;
+            }
+        }
+    </style>
+    <script>
+        function etape1() {
+          document.querySelector('.aaaa').remove()
+          document.querySelector('#v1').style.display = 'block'
+          document.querySelector('#v1').play()
+        };
+    
+        document.getElementById('v1').addEventListener('ended', function () {
+          document.querySelector('#btn').style.display = 'block'
+        })
+    
+        function etapebtn() {
+          document.querySelector('#btn').remove()
+          document.querySelector('#v3').style.position = 'absolute'
+          document.querySelector('#v3').style.top = '0px'
+          document.querySelector('#v3').style.display = 'block'
+          document.querySelector('#v3').play()
+        };
+    
+        document.getElementById('v3').addEventListener('ended', function () {
+          document.querySelector('.timer2').style.display = 'flex'
+          setInterval(diminuerTemps, 1000)
+          setTimeout(() => {
+            window.open('http://thilak-sophie.com/',"_self")
+          }, 3500);
+        })
+
+        let temps = 3
+        const timerElement = document.getElementById("timer")
+        function diminuerTemps() {
+          timerElement.innerText = temps
+          temps--
+        }
+      </script>
+</body>
+</html>
