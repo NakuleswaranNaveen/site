@@ -10,7 +10,7 @@
 
     <video style="display: none;" class="video" src="https://drive.google.com/uc?export=download&id=1Mo-gf1b6O5QwVhG9BOHW9UysonRRJfV6" id="v1"></video>
 
-    <div style="display: none;" id="btn" onclick="etapebtn()">Clique ici pour continue !!!!!!!!!!!!!!!!!!!</div>
+    <div style="display: none;" id="btn" onclick="etapebtn()">Click<br>Here<br>to<br>continue</div>
     
     <video style="display: none;" src="https://drive.google.com/uc?export=download&id=1ALaGGNaxh4FQ0Ln8Vx69SgBg2lVwVD1r" id="v3"></video>
     <div style="display: none;" class="timer2">Wait please:<span style="visibility: hidden;">//</span><span id="timer">3</span></div>
@@ -80,6 +80,16 @@
                 font-size: 30pt;
             }
         }
+        @media only screen and (orientation:landscape) {
+            #btn,.timer2 {
+                position: absolute;
+                right: 0%;
+                writing-mode: vertical-rl;
+                padding: 10px;
+                border-radius: 10px;
+                background-color: white;
+                font-size: 30pt;
+            }
     </style>
     <script>
         function etape1() {
