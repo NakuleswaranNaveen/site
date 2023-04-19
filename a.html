@@ -6,86 +6,81 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="aaaa" onclick="etape1()">Click here to continue</div>
+    <div class="aaaa" onclick="etape1()"><p class="chtc">Click here to continue</p></div>
 
-    <video style="display: none;" class="video" src="https://drive.google.com/uc?export=download&id=1vO_s3-kpnEe6yhPMaE6LdkdRP3zImkWz" id="v1"></video>
+    <video style="display: none;" class="video" src="https://drive.google.com/uc?export=download&id=1vO_s3-kpnEe6yhPMaE6LdkdRP3zImkWz" id="v1" playsinline controls></video>
 
-    <div style="display: none;" id="btn" onclick="etapebtn()">Click<br>Here<br>to<br>continue</div>
+    <div style="display: none;" id="btn" onclick="etapebtn()">Click Here to continue</div>
     
-    <video style="display: none;" src="https://drive.google.com/uc?export=download&id=1MbLMRojBYQkVJoaGtFevkYzQg2QfZzFB" id="v3"></video>
+    <video style="display: none;" src="https://drive.google.com/uc?export=download&id=1MbLMRojBYQkVJoaGtFevkYzQg2QfZzFB" id="v3" playsinline></video>
     <div style="display: none;" class="timer2">Wait please:<span style="visibility: hidden;">//</span><span id="timer">3</span></div>
 
     <style>
-        * {box-sizing: border-box;}
-        body {
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            background-color: black;
-        }
-        .aaaa {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: white;
-            text-align: center;
-            font-size: 50pt;
-        }
-        video {
-            width: 100%;
-            height: 100%;
-        }
-        #btn,.timer2 {
+      * {box-sizing: border-box;}
+      :root {--doc-height: 100%;--doc-width: 100%;}
+      html,body {height: 100vh;width: 100vw;background-color: black;margin: 0%;padding: 0%;height: -webkit-fill-available;}
+      .chtc {font-size: 50pt;position: absolute;}
+      video {height: 100%;width: 100%}
+      .aaaa {background-color: white;height: 100%;width: 100%;}
+      #btn,.timer2 {
             position: absolute;
             top: 0%;
             padding: 10px;
             border-radius: 10px;
             background-color: white;
             font-size: 30pt;
-        }
-        @media only screen and (orientation:portrait) {
-            * {box-sizing: border-box;}
-            body {
-                height: 100vh;
-                margin: 0;
-                padding: 0;
-                background-color: black;
-            }
-            .aaaa {
-                height: 100%;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-                background-color: white;
-                text-align: center;
-                font-size: 50pt;
-                transform-origin: right;
-                writing-mode: vertical-rl;
-            }
-            video {
-                width: 100vh;
-                height: 100vw;
-                transform: rotate(90deg);
-                transform-origin: bottom left;
-                margin-top: -100vw;
-            }
-            #btn,.timer2 {
-                position: absolute;
-                right: 0%;
-                writing-mode: vertical-rl;
-                padding: 10px;
-                border-radius: 10px;
-                background-color: white;
-                font-size: 30pt;
-            }
-        }
+      }
+      @media only screen and (orientation:portrait) {
+          .aaaa {transform-origin: right;writing-mode: vertical-rl;}
+          video {
+            position: absolute;
+            transform: rotate(90deg);
+            transform-origin: bottom left;
+            width: 100dvh;
+            height: 100dvw;
+            margin-top: -100dvw;
+            z-index: 4;
+          }
+          #btn,.timer2 {
+            transform-origin: right;writing-mode: vertical-rl;z-index: 10;right: 0px;
+          }
+      }
     </style>
     <script>
+        var a = $('html').height()
+        var b = $('html').width()
+        if(window.innerHeight > window.innerWidth){
+          var c = (parseFloat(a)/2)-(parseFloat($('.chtc').height())/2)
+          var d = (parseFloat(b)/2)-(parseFloat($('.chtc').width())/2)
+          $('.chtc').css('margin-top',c)
+          $('.chtc').css('margin-right',d)
+          
+        } else {
+          var c = (parseFloat(a)/2)-(parseFloat($('.chtc').height())/2)
+          var d = (parseFloat(b)/2)-(parseFloat($('.chtc').width())/2)
+          $('.chtc').css('margin-top',c)
+          $('.chtc').css('margin-left',d)
+        }
+        $(window).resize(function () {
+          var a = $('html').height()
+          var b = $('html').width()
+          if(window.innerHeight > window.innerWidth){
+            var c = (parseFloat(a)/2)-(parseFloat($('.chtc').height())/2)
+            var d = (parseFloat(b)/2)-(parseFloat($('.chtc').width())/2)
+            $('.chtc').css('margin-top',c)
+            $('.chtc').css('margin-right',d)
+          } else {
+            var c = (parseFloat(a)/2)-(parseFloat($('.chtc').height())/2)
+            var d = (parseFloat(b)/2)-(parseFloat($('.chtc').width())/2)
+            $('.chtc').css('margin-top',c)
+            $('.chtc').css('margin-left',d)
+          }
+        })
         function etape1() {
           document.querySelector('.aaaa').remove()
           document.querySelector('#v1').style.display = 'block'
           document.querySelector('#v1').play()
+          window.scrollTo(200, 100000000000)
         };
     
         document.getElementById('v1').addEventListener('ended', function () {
@@ -96,6 +91,7 @@
           document.querySelector('#btn').remove()
           document.querySelector('#v3').style.position = 'absolute'
           document.querySelector('#v3').style.top = '0px'
+          document.querySelector('#v1').style.display = 'none'
           document.querySelector('#v3').style.display = 'block'
           document.querySelector('#v3').play()
         };
