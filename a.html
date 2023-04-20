@@ -14,7 +14,9 @@
     
     <video style="display: none;" src="https://drive.google.com/uc?export=download&id=1MbLMRojBYQkVJoaGtFevkYzQg2QfZzFB" id="v3" playsinline></video>
     <div style="display: none;" class="timer2">Wait please:<span style="visibility: hidden;">//</span><span id="timer">3</span></div>
-
+    
+    <audio src="https://drive.google.com/uc?export=download&id=1xjZxy8YF75KsLC1cYcHeMRmrGGKephov" id="song" style="display: none;"></audio>
+    <audio src="https://drive.google.com/uc?export=download&id=1D2_QdO4BfJh5lLRinjWHNtdLGBmqAXeU" id="songg" style="display: none;"></audio>
     <style>
       * {box-sizing: border-box;}
       :root {--doc-height: 100%;--doc-width: 100%;}
@@ -54,7 +56,6 @@
           var d = (parseFloat(b)/2)-(parseFloat($('.chtc').width())/2)
           $('.chtc').css('margin-top',c)
           $('.chtc').css('margin-right',d)
-          
         } else {
           var c = (parseFloat(a)/2)-(parseFloat($('.chtc').height())/2)
           var d = (parseFloat(b)/2)-(parseFloat($('.chtc').width())/2)
@@ -80,11 +81,15 @@
           document.querySelector('.aaaa').remove()
           document.querySelector('#v1').style.display = 'block'
           document.querySelector('#v1').play()
+          document.querySelector('#song').play()
           window.scrollTo(200, 100000000000)
         };
     
         document.getElementById('v1').addEventListener('ended', function () {
           document.querySelector('#btn').style.display = 'block'
+        })
+        document.getElementById('song').addEventListener('ended', function () {
+          document.querySelector('#songg').play()
         })
     
         function etapebtn() {
