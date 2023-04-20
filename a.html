@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" id="html">
 <head>
     <meta charset="UTF-8">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
@@ -47,8 +47,8 @@
       }
     </style>
     <script>
-        var a = $('html').offsetHeight
-        var b = $('html').offsetWidth
+        var a = document.getElementById('html').offsetHeight
+        var b = document.getElementById('html').offsetWidth
         if(window.innerHeight > window.innerWidth){
           var c = (parseFloat(a)/2)-(parseFloat($('.chtc').offsetHeight)/2)
           var d = (parseFloat(b)/2)-(parseFloat($('.chtc').offsetWidth)/2)
@@ -62,8 +62,8 @@
           $('.chtc').css('margin-left',d)
         }
         $(window).resize(function () {
-          var a = $('html').offsetHeight
-          var b = $('html').offsetWidth
+          var a = document.getElementById('html').offsetHeight
+          var b = document.getElementById('html').offsetWidth
           if(window.innerHeight > window.innerWidth){
             var c = (parseFloat(a)/2)-(parseFloat($('.chtc').offsetHeight)/2)
             var d = (parseFloat(b)/2)-(parseFloat($('.chtc').offsetWidth)/2)
