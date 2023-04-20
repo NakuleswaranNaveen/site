@@ -47,31 +47,31 @@
       }
     </style>
     <script>
-        var a = $('html').height()
-        var b = $('html').width()
+        var a = $('html').offsetHeight
+        var b = $('html').offsetWidth
         if(window.innerHeight > window.innerWidth){
-          var c = (parseFloat(a)/2)-(parseFloat($('.chtc').height())/2)
-          var d = (parseFloat(b)/2)-(parseFloat($('.chtc').width())/2)
+          var c = (parseFloat(a)/2)-(parseFloat($('.chtc').offsetHeight)/2)
+          var d = (parseFloat(b)/2)-(parseFloat($('.chtc').offsetWidth)/2)
           $('.chtc').css('margin-top',c)
           $('.chtc').css('margin-right',d)
           
         } else {
-          var c = (parseFloat(a)/2)-(parseFloat($('.chtc').height())/2)
-          var d = (parseFloat(b)/2)-(parseFloat($('.chtc').width())/2)
+          var c = (parseFloat(a)/2)-(parseFloat($('.chtc').offsetHeight)/2)
+          var d = (parseFloat(b)/2)-(parseFloat($('.chtc').offsetWidth)/2)
           $('.chtc').css('margin-top',c)
           $('.chtc').css('margin-left',d)
         }
         $(window).resize(function () {
-          var a = $('html').height()
-          var b = $('html').width()
+          var a = $('html').offsetHeight
+          var b = $('html').offsetWidth
           if(window.innerHeight > window.innerWidth){
-            var c = (parseFloat(a)/2)-(parseFloat($('.chtc').height())/2)
-            var d = (parseFloat(b)/2)-(parseFloat($('.chtc').width())/2)
+            var c = (parseFloat(a)/2)-(parseFloat($('.chtc').offsetHeight)/2)
+            var d = (parseFloat(b)/2)-(parseFloat($('.chtc').offsetWidth)/2)
             $('.chtc').css('margin-top',c)
             $('.chtc').css('margin-right',d)
           } else {
-            var c = (parseFloat(a)/2)-(parseFloat($('.chtc').height())/2)
-            var d = (parseFloat(b)/2)-(parseFloat($('.chtc').width())/2)
+            var c = (parseFloat(a)/2)-(parseFloat($('.chtc').offsetHeight)/2)
+            var d = (parseFloat(b)/2)-(parseFloat($('.chtc').offsetWidth)/2)
             $('.chtc').css('margin-top',c)
             $('.chtc').css('margin-left',d)
           }
