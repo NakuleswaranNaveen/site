@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="aaaa" onclick="etape1()"><p class="chtc">Click here to continue</p></div>
+    <div class="aaaa" onclick="etape1()"><div class="chtc"><div>Click here to continue</div><br><div id="nom"></div></div></div>
 
     <video style="display: none;" class="video" src="https://drive.google.com/uc?export=download&id=1vO_s3-kpnEe6yhPMaE6LdkdRP3zImkWz" id="v1" playsinline></video>
 
@@ -49,6 +49,7 @@
       }
     </style>
     <script>
+        document.getElementById('nom').innerHTML += window.location.search.slice(3).replace('$',' ')
         var a = $('html').height()
         var b = $('html').width()
         if(window.innerHeight > window.innerWidth){
@@ -63,6 +64,7 @@
           $('.chtc').css('margin-left',d)
         }
         $(window).resize(function () {
+          document.getElementById('nom').innerHTML += window.location.search.slice(3).replace('$',' ')
           var a = $('html').height()
           var b = $('html').width()
           if(window.innerHeight > window.innerWidth){
