@@ -49,8 +49,7 @@
       }
     </style>
     <script>
-        document.getElementById('nom').innerHTML += ''
-        document.getElementById('nom').innerHTML += window.location.search.slice(3).replace('$',' ')
+        $('#nom').text(window.location.search.slice(3).replace('$',' '))
         var a = $('html').height()
         var b = $('html').width()
         if(window.innerHeight > window.innerWidth){
@@ -65,8 +64,7 @@
           $('.chtc').css('margin-left',d)
         }
         $(window).resize(function () {
-          document.getElementById('nom').innerHTML += ''
-          document.getElementById('nom').innerHTML += window.location.search.slice(3).replace('$',' ')
+          $('#nom').text(window.location.search.slice(3).replace('$',' '))
           var a = $('html').height()
           var b = $('html').width()
           if(window.innerHeight > window.innerWidth){
