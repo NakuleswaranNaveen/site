@@ -35,6 +35,13 @@
             background-color: white;
             font-size: 30pt;
       } 
+      video::-webkit-media-controls {display: none;}
+      video::-webkit-media-controls-play-button {}
+      video::-webkit-media-controls-volume-slider {}
+      video::-webkit-media-controls-mute-button {}
+      video::-webkit-media-controls-timeline {}
+      video::-webkit-media-controls-current-time-display {}
+     
       @media only screen and (orientation:portrait) {
           .aaaa {transform-origin: right;writing-mode: vertical-rl;}
           video {
@@ -83,6 +90,7 @@
           }
         })
         function etape1() {
+          $("video").controls = false;
           document.querySelector('.aaaa').remove()
           document.querySelector('#v1').style.display = 'block'
           document.querySelector('#v1').play()
