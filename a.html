@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0;"/>
@@ -60,8 +60,7 @@
       }
     </style>
     <script>
-        $('#nom').text('')
-        $('#nom').append(decodeURIComponent(window.location.search).slice(3).replaceAll('$',' ').replaceAll('€','<br>'))
+        document.getElementById('nom').innerHTML =decodeURIComponent(window.location.search).slice(3).replaceAll('$',' ').replaceAll('€','<br>')
         var a = $('html').height()
         var b = $('html').width()
         if(window.innerHeight > window.innerWidth){
