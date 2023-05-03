@@ -60,7 +60,8 @@
       }
     </style>
     <script>
-        $('#nom').append(window.location.search.slice(3).replaceAll('$',' ').replaceAll('%','<br>'))
+        $('#nom').text('')
+        $('#nom').append(decodeURIComponent(window.location.search).slice(3).replaceAll('$',' ').replaceAll('€','<br>'))
         var a = $('html').height()
         var b = $('html').width()
         if(window.innerHeight > window.innerWidth){
@@ -75,7 +76,8 @@
           $('.chtc').css('margin-left',d)
         }
         $(window).resize(function () {
-          $('#nom').text(window.location.search.slice(3).replace('$',' '))
+          $('#nom').text('')
+          $('#nom').append(decodeURIComponent(window.location.search).slice(3).replaceAll('$',' ').replaceAll('€','<br>'))
           var a = $('html').height()
           var b = $('html').width()
           if(window.innerHeight > window.innerWidth){
