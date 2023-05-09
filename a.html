@@ -74,7 +74,7 @@
           $('.chtc').css('margin-top',c)
           $('.chtc').css('margin-left',d)
         }
-        $(window).resize(function () {
+        funcftion azertyuiop() {
           $('#nom').text('')
           $('#nom').append(decodeURIComponent(window.location.search).slice(3).replaceAll('$',' ').replaceAll('€','<br>'))
           var a = $('html').height()
@@ -90,7 +90,9 @@
             $('.chtc').css('margin-top',c)
             $('.chtc').css('margin-left',d)
           }
-        })
+        }
+        $(window).resize(function () {azertyuiop()})
+        window.onload = function() {setInterval("azertyuiop()", 0);};
         function etape1() {
           $("video").controls = false;
           document.querySelector('.aaaa').remove()
