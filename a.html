@@ -60,6 +60,7 @@
       }
     </style>
     <script>
+        $('#nom').text('')
         document.getElementById('nom').innerHTML =decodeURIComponent(window.location.search).slice(3).replaceAll('$',' ').replaceAll('€','<br>')
         var a = $('html').height()
         var b = $('html').width()
@@ -76,7 +77,7 @@
         }
         function azertyuiop() {
           //$('#nom').text('')
-          $('#nom').text(decodeURIComponent(window.location.search).slice(3).replaceAll('$',' ').replaceAll('€','<br>'))
+          //$('#nom').append(decodeURIComponent(window.location.search).slice(3).replaceAll('$',' ').replaceAll('€','<br>'))
           var a = $('html').height()
           var b = $('html').width()
           if(window.innerHeight > window.innerWidth){
